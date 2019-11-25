@@ -1,0 +1,9 @@
+<!--pages/demo/demo.wxml-->
+<block wx:for="{{arr}}" wx:for-item="data" wx:for-index="idx" wx:key="*this">
+  <view>
+    <checkbox></checkbox>{{idx+1}}: {{data}}
+  </view>
+</block>
+<button bind:tap="sortArr">随机排序</button>
+<button bind:tap="getMusic">获取音乐</button>
+<button bind:tap="getMovie">获取电影</button>

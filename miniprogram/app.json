@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/playlist/playlist",
+    "pages/blog/blog",
+    "pages/profile/profile",
+    "pages/demo/demo",
+    "pages/musiclist/musiclist",
+    "pages/player/player",
+    "pages/video/video"
+  ],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f4ea2a",
+    "navigationBarTitleText": "方老家",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#474747",
+    "selectedColor": "#f4ea2a",
+    "list": [{
+      "pagePath": "pages/playlist/playlist",
+      "text": "视频",
+      "iconPath": "images/video.png",
+      "selectedIconPath": "images/video-active.png"
+    },
+    {
+      "pagePath": "pages/blog/blog",
+      "text": "发布",
+      "iconPath": "images/plulish.png",
+      "selectedIconPath": "images/plulish-active.png"
+    },
+    {
+      "pagePath": "pages/profile/profile",
+      "text": "我的",
+      "iconPath": "images/me.png",
+      "selectedIconPath": "images/me-active.png"
+    }]
+  },
+  "sitemapLocation": "sitemap.json"
+}

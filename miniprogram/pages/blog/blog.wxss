@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  background-color: #fff;
+  height: 100rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  box-sizing: border-box;
+}
+
+.header .icon-bianji {
+  font-size: 48rpx;
+}
+
+.header-publish {
+  width: 68rpx;
+  height: 68rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-search {
+  flex: 1;
+}

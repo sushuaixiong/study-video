@@ -1,0 +1,9 @@
+<view class="detail-container" style="background: url({{playlist.coverImgUrl}}) no-repeat top/cover"></view>
+<view class="detail-mask"></view>
+<view class="detail-info">
+  <image class="detail-img" src="{{playlist.coverImgUrl}}"></image>
+  <view class="detail">
+    <view class="detail-name">{{playlist.name}}</view>
+  </view>
+</view>
+<s-musiclist musiclist="{{musiclist}}" />

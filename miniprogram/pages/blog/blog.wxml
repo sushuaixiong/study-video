@@ -1,0 +1,24 @@
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="header-publish" bind:tap="onPublish">
+      <i class="iconfont icon-bianji"></i>
+    </view>
+    <view class="header-search">
+      <s-search iconfont="iconfont" sousuo="icon-sousuo"/>
+    </view>
+  </view>
+
+  <!-- 底部 -->
+  <view>
+    <s-bottom-modal isModalShow="{{isModalShow}}">
+      <view slot="slot1">
+        <view>插槽1</view>
+        <button>发现</button>
+      </view>
+      <view slot="slot2">
+        <view>插槽2</view>
+      </view>
+    </s-bottom-modal>
+  </view>
+</view>

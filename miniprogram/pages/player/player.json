@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "s-process-bar": "/components/process-bar/process-bar",
+    "s-lyric": "/components/lyric/lyric"
+  }
+}
