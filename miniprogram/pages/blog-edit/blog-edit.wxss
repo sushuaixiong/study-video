@@ -21,7 +21,7 @@
 
 .words-num {
     flex:1;
-    text-align: center;
+    text-align: right;
     padding-right: 30rpx;
     font-size: 32rpx;
     color: #474747;
@@ -32,4 +32,34 @@
   color: #fff;
   font-size: 24rpx;
   margin-right: 20rpx;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+
+.image-wrap {
+  width: 220rpx;
+  height: 220rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.selectphoto {
+  border: 2rpx dashed #cbd1d7;
+  position: relative;
+}
+
+.icon-jiahao {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #cbd1d7;
+  font-size: 60rpx;
 }

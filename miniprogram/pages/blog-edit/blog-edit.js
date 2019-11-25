@@ -1,11 +1,14 @@
 // pages/blog-edit/blog-edit.js
+//输入文字最大个数
+const MAX_WORDS_NUM = 140;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    wordNum: 0,
+    footerBottom: 0,
   },
 
   /**
@@ -62,5 +65,26 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  onInput (event) {
+    let wordLength = event.detail.value.length;
+    if (wordLength >= 140) {
+      wordLength = `最大字数为${wordLength}`
+    }
+    this.setData({
+      wordNum: wordLength,
+    })
+  },
+
+  onFocus (event) {
+    this.setData({
+      footerBottom: event.detail.height,
+    });
+  },
+  onBlur (event) {
+    this.setData({
+      footerBottom: 0,
+    })
   }
 })
