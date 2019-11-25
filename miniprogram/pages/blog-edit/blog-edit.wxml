@@ -1,0 +1,14 @@
+<view class="header">
+    <textarea class="content" placeholder='请输入分享...' maxlength='140' ></textarea>
+    <view class="images">
+        <!-- 显示图片 -->
+        <!-- 底部 -->
+        <view class="image-wrap selectphoto">
+
+        </view>
+    </view>
+</view>
+<view class="footer">
+    <text class="words-num">{{wordNum}}</text>
+    <button class="send-btn">发布</button>
+</view>

@@ -2,7 +2,6 @@
   <view class="panel">
     <i class="iconfont icon-shanchu" bind:tap="onClose"></i>
     <slot name="slot1"></slot>
-    <slot name="slot2"></slot>
   </view>
 </view>
 

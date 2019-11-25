@@ -1,0 +1,5 @@
+<s-bottom-modal isModalShow="{{isModalShow}}">
+    <view slot="slot1" >
+        <button class="login-btn" open-type='getUserInfo' bindgetuserinfo='onGetuserinfo'>开启授权按钮</button>
+    </view>
+</s-bottom-modal>

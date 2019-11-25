@@ -11,14 +11,6 @@
 
   <!-- 底部 -->
   <view>
-    <s-bottom-modal isModalShow="{{isModalShow}}">
-      <view slot="slot1">
-        <view>插槽1</view>
-        <button>发现</button>
-      </view>
-      <view slot="slot2">
-        <view>插槽2</view>
-      </view>
-    </s-bottom-modal>
+    <s-login isModalShow="{{isModalShow}}" bind:loginSuccess="onGetuserinfo" bind:loginFail="loginFail"></s-login>
   </view>
 </view>

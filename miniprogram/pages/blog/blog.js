@@ -68,8 +68,38 @@ Page({
    * 发布
    */
   onPublish () {
-    this.setData({
-      isModalShow: true,
+    wx.getSetting({
+      success: (res) => {
+        console.log(res)
+        if (res.authSetting['scope.userInfo']) {
+          //如果已经授权则查询用户信息
+          wx.getUserInfo({
+            success: (res) => {
+              console.log(res);
+              this.onGetuserinfo(res.userInfo);
+            }
+          })
+        } else {
+          //如果没有授权过，则打开登陆模态框
+          this.setData({
+            isModalShow: true,
+          })
+        }
+      }
+    });
+    
+  },
+
+  onGetuserinfo (userInfo) {
+    //跳转到发布页面
+    wx.navigateTo({
+      url: `../blog-edit/blog-edit?nickName=${userInfo.nickName}&avatarUrl=${userInfo.avatarUrl}`,
     })
+  },
+
+  loginFail () {
+    wx.showToast({
+      title: '只有授权才可以发表评论'
+    });
   }
 })
