@@ -153,6 +153,7 @@ Page({
     }
     wx.showLoading({
       title: '发布中...',
+      mask: true,
     })
     for (let i = 0, len = this.data.images.length; i < len; i++) {
       let promise = new Promise((resolve, reject) => {
@@ -180,7 +181,7 @@ Page({
           content,
           imgs, 
           ...userInfo,
-          currentTime: db.serverDate(),
+          createTime: db.serverDate(),
         }
       }).then((res) => {
         wx.hideLoading();
@@ -188,6 +189,10 @@ Page({
           title: '发布成功',
         });
         wx.navigateBack();
+        //刷新
+        const pages = getCurrentPages();
+        const prePage = pages[pages.length - 2];
+        prePage.onPullDownRefresh();
       }).catch((err) => {
         wx.hideLoading();
         wx.showToast({

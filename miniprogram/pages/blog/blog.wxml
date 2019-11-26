@@ -11,7 +11,7 @@
   <view class="blog-list">
     <block wx:for="{{blogList}}" wx:key="_id">
       <view class="blog-item">
-        <s-blog-card blog="{{item}}"/>
+        <s-blog-card blog="{{item}}" bind:tap="onGetComment" data-blogId="{{item._id}}"/>
       </view>
     </block>
   </view>

@@ -49,14 +49,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      blogList: [],
+    });
+    this._getBlogList(0);
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this._getBlogList(this.data.blogList.length);
   },
 
   /**
@@ -105,18 +108,29 @@ Page({
     });
   },
 
-  _getBlogList () {
+  onGetComment (event) {
+    wx.navigateTo({
+      url: `../blog-comment/blog-comment?blogId=${event.target.dataset.blogId}`,
+    })
+  },
+
+  _getBlogList (start = 0 ) {
+    wx.showLoading({
+      title: '加载中...',
+    });
     wx.cloud.callFunction({
       name: 'blog',
       data:{
+        start,
+        count: 10,
         $url: 'list',
-        start: 0,
-        count: 10
       }
     }).then((res) => {
       this.setData({
         blogList: this.data.blogList.concat(res.result),
       })
+      wx.hideLoading();
+      wx.stopPullDownRefresh();
     })
   }
 })
