@@ -63,3 +63,23 @@
   color: #cbd1d7;
   font-size: 60rpx;
 }
+
+.icon-shanchudelete30 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40rpx;
+    height: 40rpx;
+    background-color: #000;
+    opacity: 0.4;
+    color: #fff;
+    text-align: center;
+    line-height: 40rpx;
+    font-size: 38rpx;
+    font-weight: bolder;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}

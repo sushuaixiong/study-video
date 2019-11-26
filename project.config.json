@@ -22,6 +22,7 @@
 	"libVersion": "2.9.3",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -80,10 +81,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 5,
 					"name": "pages/blog-edit/blog-edit",
 					"pathName": "pages/blog-edit/blog-edit",
-					"query": "nickName= \"小黄师傅\"&avatarUrl: \"https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoIXfouY…kg1mxPBC5csQK4xvgHrqAmRvSviaa23gODhtUZcjSJfyg/132\"",
+					"query": "nickName=小黄师傅&avatarUrl=https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoIXfouYMiagSkqfY2L9Iok3FZZqeVkn9xkg1mxPBC5csQK4xvgHrqAmRvSviaa23gODhtUZcjSJfyg/132",
 					"scene": null
 				}
 			]

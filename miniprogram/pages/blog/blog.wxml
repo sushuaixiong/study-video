@@ -8,7 +8,13 @@
       <s-search iconfont="iconfont" sousuo="icon-sousuo"/>
     </view>
   </view>
-
+  <view class="blog-list">
+    <block wx:for="{{blogList}}" wx:key="_id">
+      <view class="blog-item">
+        <s-blog-card blog="{{item}}"/>
+      </view>
+    </block>
+  </view>
   <!-- 底部 -->
   <view>
     <s-login isModalShow="{{isModalShow}}" bind:loginSuccess="onGetuserinfo" bind:loginFail="loginFail"></s-login>

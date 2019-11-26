@@ -27,3 +27,12 @@
 .header-search {
   flex: 1;
 }
+
+.blog-list {
+  margin-top: 120rpx;
+}
+
+.blog-item {
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}

@@ -2,13 +2,19 @@
     <textarea class="content" placeholder='请输入分享...' maxlength='140' bindinput="onInput" bindfocus="onFocus" auto-focus bindblur="onBlur"></textarea>
     <view class="images">
         <!-- 显示图片 -->
+        <block wx:for="{{images}}" wx:key="*this">
+          <view class='image-wrap'>
+            <image class="image" src="{{item}}" mode="aspectFill" bind:tap="onPreview" data-imgSrc="{{item}}"></image>
+            <i class="iconfont icon-shanchudelete30"  bind:tap="onDelete" data-index="{{index}}"></i>
+          </view>
+        </block>
         <!-- 底部 -->
-        <view class="image-wrap selectphoto">
+        <view class="image-wrap selectphoto" hidden='{{!isShowSelect}}' bind:tap="onSelectPhoto">
           <i class="iconfont icon-jiahao"></i>
         </view>
     </view>
 </view>
 <view class="footer" style="bottom:{{footerBottom}}px">
     <text class="words-num">{{wordNum}}</text>
-    <button class="send-btn">发布</button>
+    <button class="send-btn" bind:tap="onSend">发布</button>
 </view>

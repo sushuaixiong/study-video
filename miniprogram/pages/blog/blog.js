@@ -6,13 +6,15 @@ Page({
    */
   data: {
     isModalShow: false,
+    blogList: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //获取博客列表
+    this._getBlogList();
   },
 
   /**
@@ -101,5 +103,20 @@ Page({
     wx.showToast({
       title: '只有授权才可以发表评论'
     });
+  },
+
+  _getBlogList () {
+    wx.cloud.callFunction({
+      name: 'blog',
+      data:{
+        $url: 'list',
+        start: 0,
+        count: 10
+      }
+    }).then((res) => {
+      this.setData({
+        blogList: this.data.blogList.concat(res.result),
+      })
+    })
   }
 })

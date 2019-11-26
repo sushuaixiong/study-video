@@ -1,0 +1,15 @@
+<view class="blog">
+  <view class="blog-title">
+    <image class="blog-avatarUrl" src="{{blog.avatarUrl}}"></image>
+    <view class="blog-box">
+      <view class="nickName">{{blog.nickName}}</view>
+      <view class="blog-time">{{blog.currentTime}}</view>
+    </view>
+  </view>
+  <view class="blog-content">{{blog.content}}</view>
+  <view class="blog-img">
+    <block wx:for="{{blog.imgs}}" wx:key="index">
+      <image src="{{item}}" class="img" mode="aspectFill"></image>
+    </block>
+  </view>
+</view>
