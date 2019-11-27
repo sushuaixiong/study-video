@@ -1,0 +1,19 @@
+<view class="ctrl">
+  <view class="ctrl-item" bind:tap="onComment">
+    <i class="iconfont icon-pinglun_huabanfuben icon"></i>
+    <text>评论</text>
+  </view>
+  <view class="ctrl-item">
+    <i class="iconfont icon-fenxiang icon"></i>
+    <text>分享</text>
+  </view>
+</view>
+
+<s-login isModalShow="{{isModalShow}}" bind:loginSuccess="onLoginSuccess" bind:loginFail="onLoginFail"/>
+
+<s-bottom-modal isModalShow="{{isCommondModalShow}}">
+  <form slot="slot1" report-submit="true" bind:submit="toComment">
+    <textarea name="content" class="comment-content" placeholder="请评论" value="{{content}}" fixed="true"></textarea>
+    <button class="ctrl-btn" form-type="submit">发布</button>
+  </form>
+</s-bottom-modal>

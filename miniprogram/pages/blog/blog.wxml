@@ -5,13 +5,14 @@
       <i class="iconfont icon-bianji"></i>
     </view>
     <view class="header-search">
-      <s-search iconfont="iconfont" sousuo="icon-sousuo"/>
+      <s-search iconfont="iconfont" sousuo="icon-sousuo" bind:onSearch="onSearch"/>
     </view>
   </view>
   <view class="blog-list">
     <block wx:for="{{blogList}}" wx:key="_id">
       <view class="blog-item">
         <s-blog-card blog="{{item}}" bind:tap="onGetComment" data-blogId="{{item._id}}"/>
+        <s-blog-ctrl blogId="{{item._id}}" iconfont="iconfont" icon-fenxiang="icon-fenxiang" icon-pinglun_huabanfuben="icon-pinglun_huabanfuben"/>
       </view>
     </block>
   </view>

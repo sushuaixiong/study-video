@@ -8,12 +8,24 @@ const blogCollection = db.collection('blog');
 // 云函数入口函数
 exports.main = async (event, context) => {
   const app = new tcbRouter({event});
-
   app.router('list', async (ctx, next) => {
-    let blogList = await blogCollection.skip(event.start).limit(event.count).orderBy('currentTime', 'desc').get().then((res) => {
+    let w = {}
+    if (event.keyword.trim() != '') {
+      w = {
+        content: db.RegExp({
+          regexp: event.keyword,
+          options: 'i'
+        })
+      }
+    }
+    let blogList = await blogCollection.where(w).skip(event.start).limit(event.count).orderBy('currentTime', 'desc').get().then((res) => {
       return res.data;
     });
     ctx.body = blogList;
+  })
+
+  app.router('detail',async (ctx,next) => {
+    
   })
 
   return app.serve();

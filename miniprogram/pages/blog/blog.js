@@ -1,4 +1,5 @@
 // pages/blog/blog.js
+let keyword = '';
 Page({
 
   /**
@@ -80,7 +81,6 @@ Page({
           //如果已经授权则查询用户信息
           wx.getUserInfo({
             success: (res) => {
-              console.log(res);
               this.onGetuserinfo(res.userInfo);
             }
           })
@@ -96,9 +96,10 @@ Page({
   },
 
   onGetuserinfo (userInfo) {
+    console.log(userInfo)
     //跳转到发布页面
     wx.navigateTo({
-      url: `../blog-edit/blog-edit?nickName=${userInfo.nickName}&avatarUrl=${userInfo.avatarUrl}`,
+      url: `../blog-edit/blog-edit?nickName=${userInfo.detail.nickName}&avatarUrl=${userInfo.detail.avatarUrl}`,
     })
   },
 
@@ -114,6 +115,14 @@ Page({
     })
   },
 
+  onSearch (event) {
+    this.setData({
+      blogList: [],
+    });
+    keyword = event.detail.keyword;
+    this._getBlogList(0);
+  },
+
   _getBlogList (start = 0 ) {
     wx.showLoading({
       title: '加载中...',
@@ -122,6 +131,7 @@ Page({
       name: 'blog',
       data:{
         start,
+        keyword,
         count: 10,
         $url: 'list',
       }
