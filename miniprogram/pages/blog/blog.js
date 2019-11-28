@@ -111,7 +111,7 @@ Page({
 
   onGetComment (event) {
     wx.navigateTo({
-      url: `../blog-comment/blog-comment?blogId=${event.target.dataset.blogId}`,
+      url: `../blog-comment/blog-comment?blogId=${event.target.dataset.blogid}`,
     })
   },
 
