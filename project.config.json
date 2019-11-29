@@ -86,6 +86,13 @@
 					"pathName": "pages/blog-edit/blog-edit",
 					"query": "nickName=小黄师傅&avatarUrl=https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoIXfouYMiagSkqfY2L9Iok3FZZqeVkn9xkg1mxPBC5csQK4xvgHrqAmRvSviaa23gODhtUZcjSJfyg/132",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "profile",
+					"pathName": "pages/profile/profile",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

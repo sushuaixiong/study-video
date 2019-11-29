@@ -7,3 +7,6 @@
 <button bind:tap="sortArr">随机排序</button>
 <button bind:tap="getMusic">获取音乐</button>
 <button bind:tap="getMovie">获取电影</button>
+<open-data type="userNickName" ></open-data>
+<open-data type="userAvatarUrl" ></open-data>
+<button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">获取用户信息</button>

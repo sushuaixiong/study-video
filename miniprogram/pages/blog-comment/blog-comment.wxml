@@ -1,2 +1,26 @@
-<!--pages/blog-comment/blog-comment.wxml-->
-<text>pages/blog-comment/blog-comment.wxml</text>
+<scroll-view class="container" scroll-y="true">
+  <view class="blog-card">
+    <s-blog-card blog="{{blog}}"></s-blog-card>
+  </view>
+  <view class="tab">
+    <view class="tab-item">评论列表</view>
+  </view>
+  <view class="comment-list">
+    <block wx:for="{{commentList}}" wx:key="_id">
+      <view class="comment">
+        <view class="comment-title">
+          <image class="comment-avatarUrl" src="{{item.avatarUrl}}"></image>
+           <text class="comment-nickname">{{item.nickName}}</text>
+        </view>
+        <view class="comment-content">
+          {{item.content}}
+        </view>
+         <view class="comment-time">{{item.createTime}}</view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+
+<view class="blog-ctrl">
+   <s-blog-ctrl blogId="{{blog._id}}" iconfont="iconfont" icon-fenxiang="icon-fenxiang" icon-pinglun_huabanfuben="icon-pinglun_huabanfuben"/>
+</view>

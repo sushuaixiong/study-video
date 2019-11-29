@@ -195,5 +195,8 @@ setTime () {
    */
   onShareAppMessage: function () {
 
+  },
+  onGetUserInfo (event) {
+    console.log(event)
   }
 })
